@@ -1,0 +1,59 @@
+@keyframes anim{
+    from { background-image: linear-gradient(to right, darkred,black);}
+    to{ background-image: linear-gradient(to right, black,grey);}
+
+}
+
+@keyframes animat{
+    from { background-image: linear-gradient(to right, white,green);}
+    to{ background-image: linear-gradient(to right, darkred,black);}
+
+}
+h1.b{
+    background-image: linear-gradient(to right, white,green);
+}
+h1.a {
+    background-image: linear-gradient(to right, darkred, black);
+}
+h1{
+    text-align:center;
+
+   width:150px;
+    height:150px;
+    padding: 50px 30px 30px 30px;
+    color: black;
+    text-shadow: 2px 2px 4px white;
+    box-shadow: 10px 10px grey;
+    transition: width 2s, transform 2s;
+    transition-timing-function:linear;
+
+}
+.flex-container{
+
+    display:flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+
+}
+h1.a:hover{
+    width:300px;
+    position:relative;
+    transform: rotateX(180deg);
+    transform: rotateY(180deg);
+    transform: rotateZ(180deg);
+    animation-name:anim;
+    animation-duration: 2s;
+    animation-delay:1s;
+    animation-direction:reverse;
+}
+h1.b:hover{
+    width:300px;
+    position:relative;
+    transform: rotateX(180deg);
+    transform: rotateY(180deg);
+    transform: rotateZ(180deg);
+    animation-name:animat;
+    animation-duration: 2s;
+    animation-delay:1s;
+    animation-direction:reverse;
+}
