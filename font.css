@@ -1,0 +1,20 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_bold.woff);
+    font-weight: bold;
+}
+
+div {
+    font-family: myFirstFont;
+}
+.l {
+    font-family: 'Trade Winds';font-size: 22px;
+}
+.d {
+    font-family: 'Dekko';font-size: 22px;
+}

@@ -1,0 +1,18 @@
+img.a{
+    filter:blur(5px);
+}
+img.b{
+    filter:brightness(200%);
+}
+img.c{
+    filter:contrast(200%);
+}
+img.d{
+    filter:drop-shadow(8px 8px 10px grey);
+}
+img.g{
+    filter:grayscale(50%);
+}
+img.i{
+    filter:invert(100%);
+}
