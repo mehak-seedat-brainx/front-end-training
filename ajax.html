@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("button").click(function(){
-                $.post("demo_test_post.asp",
-                    {
-                        name: "Donald Duck",
-                        city: "Duckburg"
-                    },
-                    function(data,status){
-                        alert("Data: " + data + "\nStatus: " + status);
-                    });
-            });
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<button>Send an HTTP POST request to a page and get the result back</button>
+<button class="btn btn-primary">Get Weather!</button>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $("button").click(function(){
+           if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(myMap,showError);
+
+            }
+           else {
+               alert("Geolocation is not supported by this browser.)");
+           }
+
+            function myMap(position) {
+                lat=position.coords.latitude;
+                lon=position.coords.longitude;
+                $.ajax({
+                    url: 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon +  '&units=metric&APPID=bd9e0afad0dbafd083efd98322a0a272',
+                    type: "GET",
+                    dataType: "jsonp",
+                    success: function(data){
+                        alert("Latitude: "+data.coord["lat"] + " Longitude: "+data.coord["lon"]+"\nCountry: " + data.sys["country"]+ "\nTemperature: " + data.main["temp"]);
+                    }
+                });
+
+            }
+        });
+        function showError(){alert ("Cannot get location");};
+    });
+
+</script>
 </html>
