@@ -6,11 +6,13 @@ radius = radius * 0.90;
 var now = new Date();
 
 setInterval(drawClock,1000);
+
 function drawClock(){
     clock();
     clocknumbers();
     drawtime();
 }
+
 function clock() {
 
     ctx.beginPath();
@@ -23,6 +25,7 @@ function clock() {
     ctx.fill();
 
 }
+
 function clocknumbers() {
 
     var ang;

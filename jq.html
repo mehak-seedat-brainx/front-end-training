@@ -2,40 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#ab").on({
-                mouseenter: function(){
-                    $(this).css("background-color", "lightgray");
-                },
-                mouseleave: function(){
-                    $(this).css("background-color", "black");
-                },
-                click: function(){
-                    $(this).css("background-color", "darkred");
-                    $(this).css("color","white");
 
-                }
-            });
-            $("#btn").on({
-                click:function(){
-                    $("#ab").fadeToggle("slow");
-                    $(this).text("Toggle");
-                }
-            });
-            $("#btn2").click(function(){
-                $("#ab").animate({left: '250px'});
-            });
-        });
-    </script>
 </head>
 <body>
 
 
-    <div id="ab" style="width:400px;height:200px; background-color:darkred;position: absolute;"><p>Click or move the mouse pointer over this paragraph.</p>
+<div id="ab" style="width:400px;height:200px; background-color:darkred;position: absolute;"><p>Click or move the mouse pointer over this paragraph.</p>
 
     <button id="btn2" style="background-color: darkgreen; width:80px; color:white; margin:10px; padding:5px;position:absolute; "> Animate</button>
-    </div> <button id="btn" style="background-color: darkgreen; width:50px; color:white; margin:10px; padding:5px;"> Hide</button>
+</div> <button id="btn" style="background-color: darkgreen; width:50px; color:white; margin:10px; padding:5px;"> Hide</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="jquery.js"></script>
 </body>
 </html>

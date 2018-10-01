@@ -2,7 +2,7 @@ var canvas = document.getElementById("mycanvas");
 var ctx = canvas.getContext("2d");
 var radius = canvas.height / 2;
 ctx.translate(radius, radius);
-radius = radius * 0.29;
+radius = radius * 0.90
 setInterval(drawClock,1000);
 function drawClock(){
     clock();
@@ -13,7 +13,7 @@ function clock() {
 
     ctx.beginPath();
     ctx.arc(0, 0, radius, 0 , 2*Math.PI);
-    ctx.fillStyle = "#D1D1FA";
+    ctx.fillStyle = "white";
     ctx.fill();
     ctx.beginPath();
     ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
@@ -33,7 +33,7 @@ function clocknumbers() {
         ctx.rotate(ang);
         ctx.translate(0, -radius * 0.85);
         ctx.rotate(-ang);
-        //ctx.fillText(num.toString(), 0, 0);
+        ctx.fillText(num.toString(), 0, 0);
         ctx.rotate(ang);
         ctx.translate(0, radius * 0.85);
         ctx.rotate(-ang);
